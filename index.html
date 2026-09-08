@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#1976d2">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="REPORT MP">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <title>REPORT MP</title>
+  <style>
+    html,body {
+      margin:0; padding:0; width:100%; height:100%;
+      overflow:hidden; background:#fff;
+      font-family:Arial,sans-serif;
+    }
+    iframe {
+      display:block; width:100%; height:100%;
+      border:0;
+    }
+    #loading {
+      position:fixed; inset:0; z-index:10;
+      display:flex; align-items:center; justify-content:center;
+      background:#fff; color:#222; font-size:18px;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">Membuka REPORT MP...</div>
+  <iframe
+    src="https://script.google.com/macros/s/AKfycbxdc_SA2WTgpCG6JEiaqUWi2zYCjpHm_7OE3uiexSf-LaopQbV9roEDw3o5SWCH6ylHOA/exec"
+    allow="clipboard-read; clipboard-write"
+    title="REPORT MP"
+    onload="document.getElementById('loading').style.display='none'">
+  </iframe>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js").catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
